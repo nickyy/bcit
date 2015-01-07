@@ -1,0 +1,13 @@
+﻿<div>
+	<h2>{{city}}</h2>
+	<table>
+		<thead>
+			<th>Date</th><th></th><th>Conditions</th><th>High</th><th>Low</th>
+		</thead>
+		<tbody>
+			<tr ng-repeat="fc in forecast">
+				<td id="date">{{fc.date}}</td><td><img id="imageCode" src="http://l.yimg.com/a/i/us/we/52/{{fc.code}}.gif"></td><td>{{fc.text}}</td><td>{{fc.high}}</td><td>{{fc.low}}</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

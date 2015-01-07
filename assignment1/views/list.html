@@ -1,0 +1,26 @@
+﻿<div id="container">
+	<div id="header">
+		<h2 class="headerDate">Date: {{today | date:'MMMM dd, yyyy'}}
+			<span id="view">View by:
+				<select ng-model="viewBy">
+					<option value="cityName">City</option>
+					<option value="high">High</option>
+					<option value="low">Low</option>
+				</select>
+			</span>
+		</h2>
+	</div>
+	
+	<div id="weather">
+		<table>
+			<thead>
+				<th>City</th><th></th><th>Conditions</th><th>High</th><th>Low</th>
+			</thead>
+			<tbody>
+				<tr ng-repeat="fc in forecast | orderBy:viewBy">
+					<td><a href="#/weather/city/{{fc.cityName}}/code/{{fc.cityCode}}">{{fc.cityName}}</a></td><td><img id="imageCode" src="http://l.yimg.com/a/i/us/we/52/{{fc.code}}.gif"></td><td>{{fc.text}}</td><td>{{fc.high}}</td><td>{{fc.low}}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>

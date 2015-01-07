@@ -1,0 +1,42 @@
+﻿<!doctype html>
+<html>
+<head>
+    <title>Starting Angular</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<!-- Notice here that ng-app references our 'weatherApp' module -->
+<body ng-app='weatherApp'>
+    <!-- Reference the application level controller for the title model. -->
+    <div ng-controller="AppCtrl" ng-model="title">
+		<div class="header">
+			<div class="logo"></div>
+			<h1 class="title">{{title}}</h1>
+		</div>
+		
+		
+		<nav>
+			<!-- The #home link selects routing for '/home'.  Routing for
+				 #add does not exist yet so the default for '/home' will be chosen.-->
+			<a class="goHome" href="#home">Home</a> <!--| <a href="#weather">Weather</a>-->
+			<div class="convert" ng-controller="TempCtrl">
+				<input type="radio" ng-model="temp" ng-change="update()" value="C">C
+				<input type="radio" ng-model="temp" ng-change="update()" value="F">F
+			</div>
+		</nav>
+		<hr>
+		
+        <!-- Our one page app works by switching views here. -->
+        <div ng-view></div><br />
+
+    </div>
+    <!--angular-->
+    <script src="https://code.angularjs.org/1.3.3/angular.min.js"></script>
+    <script src="https://code.angularjs.org/1.3.3/angular-route.min.js"></script>
+    <!--site-->
+
+    <script src="js/controllers.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/services.js"></script>
+</body>
+</html>

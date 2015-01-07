@@ -1,0 +1,85 @@
+body {
+	font-family: arial, sans-serif;
+	background: CornflowerBlue;
+}
+
+.logo {
+	background: url("logo.png") no-repeat;
+	padding: 120px;
+}
+
+.header .title {
+	width: 40%;
+	color: yellow;
+}
+
+.header .title, .header .logo {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+nav .goHome, nav .convert {
+	display: inline-block;
+}
+
+nav .convert {
+	float: right;
+}
+
+nav {
+	width: 600px;
+}
+
+table {
+	background-color: white;
+	width: 600px;
+}
+
+tr {
+	border: 2px solid black;
+}
+
+table, th, td, tr {
+	border-collapse: collapse;
+}
+
+td {
+	width: 20%;
+	text-align: center;
+}
+
+th {
+	padding: 15px;
+}
+
+#view {
+	float: right;
+}
+
+#headerDate {
+	color: blue;
+}
+
+#date {
+	color: blue;
+}
+
+#imageCode {
+	margin-right:
+}
+
+#container {
+	width: 600px;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:visited {
+	color: blue;
+}
+
+a:hover {
+	font-weight: bold;
+}

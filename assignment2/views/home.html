@@ -1,0 +1,34 @@
+<form name="myForm">
+	<!--------------------------->
+	<!-- Input with validation -->
+	<!--------------------------->
+	<label for="name" class="label">Name:</label>
+	<input name="name" ng-model="username" ng-pattern="/^[a-zA-Z0-9]+$/" required>
+
+	<!-- Show validation error messages -->
+	<span class="ng-dirty ng-invalid" ng-show="myForm.name.$error.required">Name required!</span>
+	<span class="ng-dirty ng-invalid" ng-show="myForm.name.$error.pattern">Name must contain numbers and letters only!</span>
+	
+	<!------------------------------>
+	<!-- Password with validation -->
+	<!------------------------------>
+	<label for="password" class="label">Password:</label>
+	<input type="password" name="password" ng-model="value1" ng-minlength="8" ng-maxlength="20" required equals="value2">
+	
+	<!-- Show validation error messages -->
+	<span ng-show="myForm.password.$error.minlength">Minimum 8 characters required for password.</span>
+	<span ng-show="myForm.password.$error.maxlength">More than 20 characters not permitted for password.</span>
+	<span ng-show="myForm.password.$error.required">Password required!</span>
+	
+	<!------------------------------------------->
+	<!-- Password confirmation with validation -->
+	<!------------------------------------------->
+	<label for="password2" class="label">Confirm Password:</label>
+	<input type="password" name="password2" ng-model="value2" ng-minlength="8" ng-maxlength="20" required equals="value1">
+	
+	<!-- Show validation error messages -->
+	<span ng-show="myForm.password2.$error.required">Password required!</span>
+	<!--<span ng-show="myForm.value2.$error.match">Passwords must match!</span>-->
+
+	<button ng-click="update(username)" ng-disabled="value1!=value2 || myForm.$invalid">Update</button>
+</form>

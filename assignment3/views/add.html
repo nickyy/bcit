@@ -1,0 +1,21 @@
+﻿<form name="form" class="css-form">
+    Number:
+    <!-- Apply card number validation with the ng-pattern and required directives -->
+    <input type="text" ng-model="card.number" name="number"
+           ng-pattern="/^([aAkKjJQq23456789]{1}|(10){1})$/" required /><br />
+    <!-- When the number input is invalid show text explaining the error. -->
+    <span ng-show="form.number.$error.pattern" class="invalidText">
+        Card numbers can only be A,a,2-10,j,J,q,Q,k,K!
+    </span><br />
+    Suit:
+    <input type="radio" ng-model="card.suit" value="Clubs" required />Clubs
+    <input type="radio" ng-model="card.suit" value="Hearts" />Hearts
+    <input type="radio" ng-model="card.suit" value="Spades" />Spades
+    <input type="radio" ng-model="card.suit" value="Diamonds" />Diamonds
+    <br />
+
+    <!-- Call reset() function within AddCtrl controller. -->
+    <button ng-click="reset()">RESET</button>
+    <!-- Call add() function within AddCtrl controller. -->
+    <button ng-click="add(card)" ng-disabled="form.$invalid ">SAVE</button>
+</form>
